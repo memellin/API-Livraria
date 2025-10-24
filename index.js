@@ -5,7 +5,10 @@ app.use(express.json());
 
 // Importa as rotas de usuários
 const userRoutes = require("./routes/users");
+const moviesRoutes = require("./routes/movie")
+
 app.use("/users", userRoutes);
+app.use("/movies", moviesRoutes);
 
 app.get("/", (req, res) => {
   res.json({ message: "API rodando dentro do Codespaces!" });
