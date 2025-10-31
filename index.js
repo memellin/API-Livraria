@@ -1,5 +1,15 @@
 const express = require("express");
 const app = express();
+const client = require("./db/db");
+
+// Conexão com BD 
+client.query("SELECT NOW()", (err, result) => {
+ if (err) {
+ console.error("Erro ao conectar ao banco:", err);
+ } else {
+ console.log("Banco conectado:", result.rows);
+ }
+})
 
 app.use(express.json());
 

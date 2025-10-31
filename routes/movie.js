@@ -1,23 +1,6 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.json([
-    {
-        "id": 1,
-        "title": "A volta dos que não foram",
-        "duration": 120,
-        "genre": "Thriler"
-    },
-    {
-        "id": 2,
-        "title": "Os incriveis",
-        "duration": 169,
-        "genre": "Animation"        
-    }
-]);
-});
-
 router.get("/:id", (req, res) => {
     const id = req.params.id;
     res.json({ id, title: "", duration, genre: ""});
